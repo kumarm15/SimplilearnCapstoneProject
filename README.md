@@ -31,3 +31,12 @@ The following things to be kept in check:
 
 
 <img width="527" alt="Screen Shot 2021-11-21 at 4 39 25 AM" src="https://user-images.githubusercontent.com/56155128/142743421-8670832f-2169-4c22-b172-67de4efe33a8.png">
+
+Below includes the Server details in which the setup has been deployed and Tested.
+
+VM Name	      Pub IP	     IP-Local		
+Master-VM-1	54.88.204.113	172.31..42.93		
+Worker-VM-1	54.235.91.60	172.31.39.24		
+Worker-VM-2	34.234.222.97	172.31.41.162		
+		
+
