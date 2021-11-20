@@ -1,0 +1,31 @@
+---
+- name: Create a new Demo EC2 instance
+  hosts: localhost
+  gather_facts: False
+
+  vars:
+      region: us-east-1
+      instance_type: t2.micro
+      ami: ami-083654bd07b5da81d # Ubuntu 20.04 LTS
+      keypair: Simplilearn-DevOps-Project
+      subnetid: subnet-0da9e8a6610235554 
+  
+  tasks:
+
+    - name: Create an ec2 instance
+      ec2:
+         key_name: "{{ keypair }}"
+         group: launch-wizard-1  # security group name
+         instance_type: "{{ instance_type }}"
+         image: "{{ ami }}"
+         wait: true
+         region: "{{ region }}"
+         count: 1  # default
+         count_tag:
+            Name: worker-vm1
+         instance_tags:
+            Name: worker-vm1
+         vpc_subnet_id: "{{ subnetid }}"
+         assign_public_ip: yes
+      register: ec2
+
